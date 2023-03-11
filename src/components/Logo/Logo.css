@@ -1,0 +1,7 @@
+.logo {
+    display: block;
+    background: url(../../../public/images/rick_and_morty_logo.png) no-repeat center;    
+    width: 600px;
+    height: 200px;
+    margin: 0 auto 16px;
+}
