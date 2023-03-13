@@ -7,7 +7,7 @@ const App = (): JSX.Element => {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<MainPage />} />        
+        <Route path='/' element={<MainPage />} />
       </Routes>
     </div>
   );

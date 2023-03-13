@@ -1,0 +1,13 @@
+.characters-list__items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.characters-list__error {
+    width: 250px;
+    text-align: center;
+    color: rgb(212, 6, 6);
+    font-size: 20px;
+    padding: 30px 0;
+    margin: 0 auto;   
+}
