@@ -10,7 +10,7 @@
     width: 24px;
     height: 24px;
     border: none;
-    background: url(../../../public/images/search.png) center no-repeat;
+    background: url(../../../public/images/search.svg) center no-repeat;
     cursor: pointer;
     border-radius: 50%;       
 }

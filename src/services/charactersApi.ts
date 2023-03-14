@@ -1,4 +1,5 @@
 import {
+  CharacterItemModel,
   CharactersSearchResponseType
 } from './charactersTypes';
 import { BASE_URL, commonHeaders } from './constants';
@@ -54,5 +55,13 @@ export const searchCharacters = async (
 ): Promise<CallApiEndpointResult<CharactersSearchResponseType>> =>
   await callApiEndpoint<undefined, CharactersSearchResponseType>({
     endpoint: `api/character/?name=${q}`,
+    method: 'GET'
+  });
+
+export const getCharacter = async (
+  id: string
+): Promise<CallApiEndpointResult<CharacterItemModel>> =>
+  await callApiEndpoint<undefined, CharacterItemModel>({
+    endpoint: `api/character/${id}`,
     method: 'GET'
   });

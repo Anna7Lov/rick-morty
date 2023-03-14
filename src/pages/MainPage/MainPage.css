@@ -1,4 +1,5 @@
 .main-page {
     max-width: 1020px;
-    margin: 85px auto 185px;
+    padding: 85px 0 185px;
+    margin: 0 auto;
 }

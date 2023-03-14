@@ -9,8 +9,7 @@ interface CharacterCardProps {
 
 export const CharacterCard = ({
   character
-}: CharacterCardProps): JSX.Element => {
-  return (
+}: CharacterCardProps): JSX.Element => (
     <div className="character-card">
       <Link to={`character/${character.id}`} className="character-card__link">
         <img
@@ -24,5 +23,4 @@ export const CharacterCard = ({
         </div>
       </Link>
     </div>
-  );
-};
+);

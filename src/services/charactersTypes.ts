@@ -15,3 +15,14 @@ export enum RequestState {
   Success = 'Success',
   Failure = 'Failure'
 }
+
+export interface OriginModel {
+  name: string;
+}
+
+export interface CharacterItemModel extends CharacterCardModel {
+  gender: string;
+  status: string;
+  origin: OriginModel;
+  type: string;
+}

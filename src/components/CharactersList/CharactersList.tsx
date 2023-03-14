@@ -8,11 +8,12 @@ import {
 import { sortByName } from '../../utils/sortByName';
 import { CharacterCard } from '../CharacterCard/CharacterCard';
 import { Loading } from '../Loading/Loading';
+import { Error } from '../Error/Error';
 import './CharactersList.css';
 
 export const CharactersList = (): JSX.Element => {
   const characters = useSelector(selectCharacters);
-  const isLoading = useSelector(selectAreCharactersLoading);
+  const isListLoading = useSelector(selectAreCharactersLoading);
   const error = useSelector(selectAreCharactersFailed);
 
   const sortedCharacters = useMemo(() => {
@@ -24,15 +25,15 @@ export const CharactersList = (): JSX.Element => {
 
   return (
     <div className="characters-list">
-      {isLoading
+      {isListLoading
         ? (<Loading />)
-        : !isLoading && !error
+        : !isListLoading && !error
             ? (<div className="characters-list__items">
             {sortedCharacters?.map((character) => (
               <CharacterCard character={character} key={character.id} />
             ))}
             </div>)
-            : (<div className="characters-list__error">{error}</div>)}
+            : (<Error error={error} />)}
     </div>
   );
 };
