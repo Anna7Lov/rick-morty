@@ -8,9 +8,10 @@ export const Search = (): JSX.Element => {
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const [inputText, setInputText] = useState<string>(
-    searchParams.get('query') ?? ''
+    searchParams.get('query') ?? localStorage.getItem('localQuery') ?? ''
   );
-  const [query, setQuery] = useState<string>(searchParams.get('query') ?? '');
+  const [query, setQuery] = useState<string>(
+    searchParams.get('query') ?? localStorage.getItem('localQuery') ?? '');
 
   const onSearchFormSubmit = useCallback(
     (e: React.ChangeEvent<HTMLFormElement>) => {
@@ -29,7 +30,10 @@ export const Search = (): JSX.Element => {
 
   useEffect(() => {
     setSearchParams(`${query === '' ? '' : `query=${query}`}`);
-    dispatch(searchCharactersThunk(query));
+    if (query !== localStorage.getItem('localQuery')) {
+      dispatch(searchCharactersThunk(query));
+    }
+    localStorage.setItem('localQuery', query);
   }, [query, dispatch]);
 
   return (

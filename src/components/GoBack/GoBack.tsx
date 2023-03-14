@@ -9,7 +9,11 @@ export const GoBack = (): JSX.Element => {
   }, []);
 
   return (
-    <button className="go-back" onClick={handleGoBackClick}>
+    <button
+      className="go-back"
+      onClick={handleGoBackClick}
+      disabled={window.history.length === 1}
+    >
       GO BACK
     </button>
   );

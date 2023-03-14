@@ -1,5 +1,6 @@
 .go-back {
     position: relative;
+    height: 24px;
     padding-left: 32px;
     font-family: 'Karla';
     font-weight: 700;
@@ -7,16 +8,31 @@
     line-height: 21px;
     color: #000000;
     border: none;
+    border-radius: 8px;
     background: none;
     cursor: pointer;
-    margin-bottom: 27px;
+    margin-bottom: 27px;    
 }
 
 .go-back::before {
     position: absolute;
     left: 0;
+    top: 0;
     content: '';
     width: 24px;
     height: 24px;
-    background: url(../../../public/images/arrow_back.svg) center;
+    background: url(../../../public/images/arrow_back.svg) center;    
+}
+
+.go-back:hover {
+    background-color: #00b1c830; 
+}
+
+.go-back:disabled {
+    cursor: auto;
+    opacity: 0.4;
+}
+
+.go-back:disabled:hover {
+    background-color: white;
 }

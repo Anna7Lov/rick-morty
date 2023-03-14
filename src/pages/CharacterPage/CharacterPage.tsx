@@ -19,7 +19,7 @@ export const CharacterPage = (): JSX.Element => {
   const character = useSelector(selectCharacter);
   const isCharacterLoading = useSelector(selectIsCharacterLoading);
   const characterError = useSelector(selectIsCharacterFailed);
-  const dataTitles = ['gender', 'status', 'species', 'origin', 'type'];
+  const dataTitles: string[] = ['gender', 'status', 'species', 'origin', 'type'];
 
   useEffect(() => {
     if (id) {
@@ -47,15 +47,14 @@ export const CharacterPage = (): JSX.Element => {
                 if (typeof dataValue === 'object') {
                   dataValue = dataValue.name;
                 }
-                if (dataValue === '') {
-                  dataValue = 'Unknown';
-                }
                 return (
                   <li key={dataTitle} className="character__data">
                     <h3 className="character__data-title">
                       {dataTitle === 'species' ? 'specie' : dataTitle}
                     </h3>
-                    <span className="character__data-value">{dataValue}</span>
+                    <span className="character__data-value">
+                      {dataValue === '' ? 'Unknown' : dataValue}
+                    </span>
                   </li>
                 );
               })}
