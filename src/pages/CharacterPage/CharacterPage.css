@@ -61,3 +61,26 @@
 .character__data-value::first-letter {
     text-transform: uppercase;
 }
+
+@media screen and (max-width: 500px) {
+    .character__image {        
+        width: 154px;
+        height: 154px;   
+        margin-bottom: 25px;    
+    }
+
+    .character__name {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 30px;
+    }
+
+    .character__info-title {
+        text-align: left;
+        margin-bottom: 16px;
+    }
+
+    .character__data-list {
+        padding-left: 15px;
+    }
+}

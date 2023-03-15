@@ -20,7 +20,7 @@ export const searchCharactersThunk = (
   try {
     const r = await searchCharacters(query);
     if (!r.success || !r.response) {
-      throw Error('Something went wrong');
+      throw new Error(r.error?.message);
     }
     dispatch(searchCharactersAsyncAction.success({ characters: r.response.results }));
   } catch (error) {

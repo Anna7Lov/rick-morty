@@ -36,3 +36,9 @@
 .go-back:disabled:hover {
     background-color: white;
 }
+
+@media screen and (max-width: 500px) {
+    .go-back {
+        margin-bottom: 75px;
+    }
+}

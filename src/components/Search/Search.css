@@ -34,4 +34,10 @@
     line-height: 150%;
     color: rgba(0, 0, 0, 0.5);
 }
+
+@media screen and (max-width: 500px) {
+    .search {        
+        margin-bottom: 32px;    
+    }    
+}
     

@@ -40,7 +40,7 @@ Promise<CallApiEndpointResult<ResponseType>
     }
     return {
       success: false,
-      error: new Error('Something went wrong')
+      error: new Error(response.status.toString())
     };
   } catch (error) {
     return {

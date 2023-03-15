@@ -41,7 +41,7 @@ export const CharacterPage = (): JSX.Element => {
             />
             <h1 className="character__name">{character.name}</h1>
             <h2 className="character__info-title">Informations</h2>
-            <ul>
+            <ul className='character__data-list'>
               {dataTitles.map((dataTitle) => {
                 let dataValue = character[dataTitle as keyof CharacterItemModel];
                 if (typeof dataValue === 'object') {

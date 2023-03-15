@@ -46,3 +46,49 @@
     letter-spacing: 0.25px;
     color: rgba(0, 0, 0, 0.6);
 }
+
+@media screen and (max-width: 950px) {
+    .character-card {
+        width: calc(33.33% - 13.33px);        
+    }
+
+    .character-card:not(:nth-child(4n+4)) {
+        margin-right: 0;
+    }
+
+    .character-card:not(:nth-child(3n+3)) {
+        margin-right: 20px;
+    }
+
+    .character-card__image {        
+        height: 200px;        
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .character-card {
+        width: calc(50% - 10px);        
+    }
+
+    .character-card:not(:nth-child(3n+3)) {
+        margin-right: 0;
+    }
+
+    .character-card:not(:nth-child(2n+2)) {
+        margin-right: 20px;
+    }
+
+    .character-card__image {        
+        height: 232px;        
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .character-card {
+        width: 100%;        
+    }   
+
+    .character-card:not(:nth-child(2n+2)) {
+        margin-right: 0;
+    }    
+}
