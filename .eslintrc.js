@@ -21,7 +21,9 @@ module.exports = {
     '@typescript-eslint/semi': [2, 'always'],
     '@typescript-eslint/consistent-type-imports': ['off'],
     '@typescript-eslint/no-floating-promises': ['off'],
+    '@typescript-eslint/restrict-template-expressions': ['off'],
     '@typescript-eslint/consistent-indexed-object-style': ['off'],
+    '@typescript-eslint/prefer-optional-chain': ['off'],
     '@typescript-eslint/strict-boolean-expressions': ['off'],
     '@typescript-eslint/member-delimiter-style': [
       'error',

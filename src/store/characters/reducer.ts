@@ -33,8 +33,7 @@ export const reducer = (state = initialState, action: GlobalAppActions): Charact
     case getType(searchCharactersAsyncAction.request): {
       return {
         ...state,
-        searchCharactersRequestState: RequestState.Waiting,
-        error: null
+        searchCharactersRequestState: RequestState.Waiting
       };
     }
 
@@ -42,8 +41,7 @@ export const reducer = (state = initialState, action: GlobalAppActions): Charact
       return {
         ...state,
         characters: action.payload.characters,
-        searchCharactersRequestState: RequestState.Success,
-        error: null
+        searchCharactersRequestState: RequestState.Success
       };
     }
 
@@ -58,8 +56,7 @@ export const reducer = (state = initialState, action: GlobalAppActions): Charact
     case getType(getCharacterAsyncAction.request): {
       return {
         ...state,
-        characterItemRequestState: RequestState.Waiting,
-        characterItemError: null
+        characterItemRequestState: RequestState.Waiting
       };
     }
 
@@ -67,8 +64,7 @@ export const reducer = (state = initialState, action: GlobalAppActions): Charact
       return {
         ...state,
         characterItem: action.payload.characterItem,
-        characterItemRequestState: RequestState.Success,
-        characterItemError: null
+        characterItemRequestState: RequestState.Success
       };
     }
 

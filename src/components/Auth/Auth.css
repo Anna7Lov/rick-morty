@@ -1,0 +1,81 @@
+.login-button {    
+    position: relative;
+    height: 36px;    
+    font-family: 'Karla';
+    font-weight: 700;
+    font-size: 20px;
+    color: #00B0C8;
+    text-shadow: 2px 2px 2px #91fe7a;
+    border: none;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;   
+    padding: 7px 5px 7px 35px;   
+}
+
+.login-button::before {
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: url(../../../public/images/google.png) center;    
+}
+
+.login-button:hover {
+    background-color: #00b1c830; 
+}
+
+.waiting {
+    font-weight: 700;
+    font-size: 20px;
+    color: #00B0C8;
+    text-shadow: 2px 2px 2px #91fe7a;
+    padding: 8px 5px;
+}
+
+.user {
+    position: relative;
+    display: flex;    
+    width: 250px;
+    font-weight: 500;    
+    justify-content: center;
+    font-size: 16px;    
+    box-shadow: inset 0px 1px 12px 2px #91fe7a;
+    background: #00B0C8;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;    
+    padding: 10px 5px;
+}
+
+.user:hover .user-section {
+    display: block;
+}
+
+.user-section {
+    position: absolute;
+    display: none;
+    width: 250px;    
+    top: 36px;
+    left: 0;
+    background: #d2fec9;
+    border-radius: 8px;
+    padding: 10px 0;    
+}
+
+.logout-button {
+    width: 100%;
+    font-size: 14px;  
+    font-weight: 700;
+    background: none;
+    border: none;
+    text-align: left;    
+    cursor: pointer;  
+    padding: 5px 20px;  
+}
+
+.logout-button:hover {
+    background-color: #00b1c830;
+}
