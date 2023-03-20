@@ -1,0 +1,4 @@
+.characters-list__items {
+    display: flex;
+    flex-wrap: wrap;
+}
