@@ -27,7 +27,7 @@ export const Auth = (): JSX.Element => {
   const handleLogout = useCallback(() => {
     dispatch(logoutUserThunk());
   }, []);
-  console.log(user);
+
   if (user === null && !userError && !isUserLoading) {
     return (
       <button
