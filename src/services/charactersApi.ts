@@ -1,7 +1,7 @@
 import {
   CharacterItemModel,
   CharactersSearchResponseType
-} from './charactersTypes';
+} from './types';
 import { BASE_URL, commonHeaders } from './constants';
 
 interface CallApiEndpointParameters<BodyType> {
@@ -51,10 +51,10 @@ Promise<CallApiEndpointResult<ResponseType>
 };
 
 export const searchCharacters = async (
-  q: string
+  query: string
 ): Promise<CallApiEndpointResult<CharactersSearchResponseType>> =>
   await callApiEndpoint<undefined, CharactersSearchResponseType>({
-    endpoint: `api/character/?name=${q}`,
+    endpoint: `api/character/?name=${query}`,
     method: 'GET'
   });
 

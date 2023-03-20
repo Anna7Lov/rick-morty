@@ -7,7 +7,7 @@ import {
   selectIsCharacterLoading
 } from '../../store/characters/selectors';
 import { getCharacterThunk } from '../../store/characters/thunks';
-import { CharacterItemModel } from '../../services/charactersTypes';
+import { CharacterItemModel } from '../../services/types';
 import { GoBack } from '../../components/GoBack/GoBack';
 import { Loading } from '../../components/Loading/Loading';
 import { Error } from '../../components/Error/Error';
@@ -25,14 +25,14 @@ export const CharacterPage = (): JSX.Element => {
     if (id) {
       dispatch(getCharacterThunk(id));
     }
-  }, [id, dispatch]);
+  }, [id]);
 
   return (
     <div className="character">
       <GoBack />
       {isCharacterLoading
         ? (<Loading />)
-        : !isCharacterLoading && !characterError && character
+        : !characterError && character
             ? (<div className="character__item">
             <img
               className="character__image"

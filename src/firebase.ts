@@ -1,15 +1,14 @@
 import { initializeApp } from 'firebase/app';
-import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAwv84c8G25hYgcbW3_yUtwzjpJcfhYEGU',
-  authDomain: 'rick-morty-c1913.firebaseapp.com',
-  projectId: 'rick-morty-c1913',
-  storageBucket: 'rick-morty-c1913.appspot.com',
-  messagingSenderId: '148344228498',
-  appId: '1:148344228498:web:837a41c4473effe8e3744b'
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SEHDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 export const app = initializeApp(firebaseConfig);
 export const googleAuthProvider = new GoogleAuthProvider();
-export const facebookAuthProvider = new FacebookAuthProvider();

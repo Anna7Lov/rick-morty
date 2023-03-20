@@ -1,14 +1,14 @@
 import { getType } from 'typesafe-actions';
 import { GlobalAppActions } from '../actions';
 import {
-  getCharacterAsyncAction,
-  searchCharactersAsyncAction
+  searchCharactersAsyncAction,
+  getCharacterAsyncAction
 } from './actions';
 import {
   CharacterCardModel,
   CharacterItemModel,
   RequestState
-} from '../../services/charactersTypes';
+} from '../../services/types';
 
 export interface CharactersState {
   characters: CharacterCardModel[];
@@ -33,7 +33,8 @@ export const reducer = (state = initialState, action: GlobalAppActions): Charact
     case getType(searchCharactersAsyncAction.request): {
       return {
         ...state,
-        searchCharactersRequestState: RequestState.Waiting
+        searchCharactersRequestState: RequestState.Waiting,
+        error: null
       };
     }
 
@@ -41,7 +42,8 @@ export const reducer = (state = initialState, action: GlobalAppActions): Charact
       return {
         ...state,
         characters: action.payload.characters,
-        searchCharactersRequestState: RequestState.Success
+        searchCharactersRequestState: RequestState.Success,
+        error: null
       };
     }
 
@@ -56,7 +58,8 @@ export const reducer = (state = initialState, action: GlobalAppActions): Charact
     case getType(getCharacterAsyncAction.request): {
       return {
         ...state,
-        characterItemRequestState: RequestState.Waiting
+        characterItemRequestState: RequestState.Waiting,
+        characterItemError: null
       };
     }
 
@@ -64,7 +67,8 @@ export const reducer = (state = initialState, action: GlobalAppActions): Charact
       return {
         ...state,
         characterItem: action.payload.characterItem,
-        characterItemRequestState: RequestState.Success
+        characterItemRequestState: RequestState.Success,
+        characterItemError: null
       };
     }
 

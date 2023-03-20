@@ -27,7 +27,7 @@ export const CharactersList = (): JSX.Element => {
     <div className="characters-list">
       {isListLoading
         ? (<Loading />)
-        : !isListLoading && !error
+        : !error
             ? (<div className="characters-list__items">
             {sortedCharacters?.map((character) => (
               <CharacterCard character={character} key={character.id} />

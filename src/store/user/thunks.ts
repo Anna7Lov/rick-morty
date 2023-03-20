@@ -1,5 +1,6 @@
 import {
-  loginUserAsyncAction, logoutUserAsyncAction
+  loginUserAsyncAction,
+  logoutUserAsyncAction
 } from './actions';
 import { AppDispatch } from '../index';
 import { ThunkAction } from 'redux-thunk';

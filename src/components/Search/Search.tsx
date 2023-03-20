@@ -31,12 +31,12 @@ export const Search = (): JSX.Element => {
   );
 
   useEffect(() => {
-    setSearchParams(`${query === '' ? '' : `query=${query}`}`);
+    setSearchParams(query !== '' ? { query } : '');
     if (query !== localStorage.getItem('localQuery') || error) {
       dispatch(searchCharactersThunk(query));
     }
     localStorage.setItem('localQuery', query);
-  }, [query, dispatch]);
+  }, [query]);
 
   return (
     <form className="search" onSubmit={onSearchFormSubmit}>

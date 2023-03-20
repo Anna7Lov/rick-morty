@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
   selectisUserFailed,
   selectIsUserLoading,
@@ -26,7 +27,7 @@ export const Auth = (): JSX.Element => {
   const handleLogout = useCallback(() => {
     dispatch(logoutUserThunk());
   }, []);
-
+  console.log(user);
   if (user === null && !userError && !isUserLoading) {
     return (
       <button
@@ -50,22 +51,25 @@ export const Auth = (): JSX.Element => {
             : `${user.email.substring(0, 22)}...`}
         </span>
         <div className="user-section">
+          <Link to={'/profile'} className="profile-link">
+            Profile
+          </Link>
           <button type="button" className="logout-button" onClick={handleLogout}>
             LogOut
           </button>
         </div>
       </div>
     );
-  } else if (userError) {
+  } else if (userLogoutError) {
     return (
       <div className="error-wrapper">
-        <Error error={userError} />
+        <Error error={userLogoutError} />
       </div>
     );
   } else {
     return (
       <div className="error-wrapper">
-        <Error error={userLogoutError} />
+        <Error error={userError} />
       </div>
     );
   }

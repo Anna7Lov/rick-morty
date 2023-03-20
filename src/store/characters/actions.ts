@@ -1,7 +1,8 @@
 import { createAsyncAction } from 'typesafe-actions';
 import {
-  CharacterCardModel, CharacterItemModel
-} from '../../services/charactersTypes';
+  CharacterCardModel,
+  CharacterItemModel
+} from '../../services/types';
 
 export enum CharactersActions {
   GET_CHARACTERS_REQUEST = '@characters/GET_CHARACTERS_REQUEST',

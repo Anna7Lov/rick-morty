@@ -1,10 +1,10 @@
 import {
-  getCharacterAsyncAction,
-  searchCharactersAsyncAction
+  searchCharactersAsyncAction,
+  getCharacterAsyncAction
 } from './actions';
 import {
-  getCharacter,
-  searchCharacters
+  searchCharacters,
+  getCharacter
 } from '../../services/charactersApi';
 import { AppDispatch } from '../index';
 import { ThunkAction } from 'redux-thunk';

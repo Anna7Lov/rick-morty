@@ -3,7 +3,7 @@ import {
   CharacterCardModel,
   CharacterItemModel,
   RequestState
-} from '../../services/charactersTypes';
+} from '../../services/types';
 
 export const selectCharacters = (state: GlobalAppState): CharacterCardModel[] =>
   state.characters.characters;

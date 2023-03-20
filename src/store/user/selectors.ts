@@ -1,5 +1,5 @@
 import { User } from 'firebase/auth';
-import { RequestState } from '../../services/charactersTypes';
+import { RequestState } from '../../services/types';
 import { GlobalAppState } from '../rootReducer';
 
 export const selectUser = (state: GlobalAppState): User | null =>

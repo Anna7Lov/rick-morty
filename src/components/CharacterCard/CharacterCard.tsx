@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CharacterCardModel } from '../../services/charactersTypes';
+import { CharacterCardModel } from '../../services/types';
 import './CharacterCard.css';
 
 interface CharacterCardProps {

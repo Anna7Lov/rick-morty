@@ -63,6 +63,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    .character {  
+        padding: 24px 24px 85px;    
+    }
+
     .character__image {        
         width: 154px;
         height: 154px;   

@@ -1,6 +1,6 @@
 import { User } from 'firebase/auth';
 import { getType } from 'typesafe-actions';
-import { RequestState } from '../../services/charactersTypes';
+import { RequestState } from '../../services/types';
 import { GlobalAppActions } from '../actions';
 import {
   loginUserAsyncAction,
@@ -29,7 +29,8 @@ export const reducer = (state = initialState, action: GlobalAppActions): UserSta
     case getType(loginUserAsyncAction.request): {
       return {
         ...state,
-        loginUserRequestState: RequestState.Waiting
+        loginUserRequestState: RequestState.Waiting,
+        loginUserError: null
       };
     }
 
@@ -37,7 +38,8 @@ export const reducer = (state = initialState, action: GlobalAppActions): UserSta
       return {
         ...state,
         currentUser: action.payload.currentUser,
-        loginUserRequestState: RequestState.Success
+        loginUserRequestState: RequestState.Success,
+        loginUserError: null
       };
     }
 
@@ -52,7 +54,8 @@ export const reducer = (state = initialState, action: GlobalAppActions): UserSta
     case getType(logoutUserAsyncAction.request): {
       return {
         ...state,
-        logoutUserRequestState: RequestState.Waiting
+        logoutUserRequestState: RequestState.Waiting,
+        logoutUserError: null
       };
     }
 
@@ -60,7 +63,8 @@ export const reducer = (state = initialState, action: GlobalAppActions): UserSta
       return {
         ...state,
         currentUser: null,
-        logoutUserRequestState: RequestState.Success
+        logoutUserRequestState: RequestState.Success,
+        logoutUserError: null
       };
     }
 

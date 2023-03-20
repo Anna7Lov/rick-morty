@@ -6,7 +6,7 @@ export const GoBack = (): JSX.Element => {
   const navigate = useNavigate();
   const handleGoBackClick = useCallback(() => {
     navigate(-1);
-  }, []);
+  }, [navigate]);
 
   return (
     <button
